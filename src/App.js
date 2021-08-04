@@ -7,11 +7,13 @@ import './App.css';
 
 function App() {
   const dispatch = useDispatch();
-  const counter = useSelector(state => state.count)
+  const counter = useSelector(state => state.count);
+  const transaction = useSelector(state => state.transaction);
 
   return (
     <div className="App">
       <header className="App-header">
+        <h1>{JSON.stringify(transaction)}</h1>
         <img src={logo} className="App-logo" alt="logo" />
         <Counter
           value={counter}

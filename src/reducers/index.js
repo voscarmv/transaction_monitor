@@ -13,8 +13,17 @@ function count(state = initialState, action) {
   }
 }
 
+function transaction(state = null, action){
+  switch (action.type) {
+    case 'FETCH_TRANSACTION':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 const rootReducer = combineReducers({
-  count
+  count, transaction,
 });
 
 export default rootReducer;
